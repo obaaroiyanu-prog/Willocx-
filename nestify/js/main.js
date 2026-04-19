@@ -1,20 +1,19 @@
-/* ============================================
-   NESTIFY — Main JavaScript
-   ============================================ */
+/* =====================================================
+   NESTIFY — Main JavaScript (Dawn Theme)
+   ===================================================== */
 
-// ── PRODUCT CATALOGUE ──────────────────────────────────────────────────────
+// ── PRODUCT DATA ───────────────────────────────────────────────────────────
 const PRODUCTS = [
   {
     id: 1,
-    title: 'Black Tape',
-    vendor: 'Nestify Basics',
-    price: 5.99,
+    title: 'Black heavy-duty gaffer tape',
+    vendor: 'Nestify Essentials',
+    price: 14.99,
     comparePrice: null,
-    badge: 'In Stock',
-    badgeClass: '',
+    badge: '3-pack',
     category: 'essentials',
-    stars: '★★★★★',
-    ratingCount: 142,
+    stars: 4.9, ratingCount: 142,
+    sku: 'NST-BT-001',
     images: [
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=800&fit=crop&q=80',
       'https://images.unsplash.com/photo-1586864387789-628af9feed72?w=800&h=800&fit=crop&q=80',
@@ -22,32 +21,31 @@ const PRODUCTS = [
     ],
     variants: ['Single Roll', '3-Pack', '6-Pack'],
     description: `
-      <p>Heavy-duty black tape that sticks — and stays stuck. Ideal for cable management, labelling, crafts, repairs, and everything in between.</p>
+      <p>Professional-grade black gaffer tape trusted by engineers, event crews, and DIY enthusiasts worldwide. Strong, clean-removing, and built to last.</p>
       <ul>
-        <li>Extra-strong adhesive backing</li>
+        <li>Extra-strong adhesive — holds on any surface</li>
         <li>Tear-resistant polyethylene film</li>
-        <li>UV & moisture resistant</li>
+        <li>UV &amp; moisture resistant</li>
         <li>Width: 48mm | Length: 50m per roll</li>
-        <li>Temperature resistant: -10°C to 60°C</li>
+        <li>Leaves no residue on removal</li>
       </ul>
     `,
-    sku: 'NST-BT-001',
     reviews: [
-      { name: 'Tom H.', location: 'Chicago, USA', stars: '★★★★★', text: '"Surprisingly good quality for the price. Holds everything together perfectly."' },
-      { name: 'Mia L.', location: 'Sydney, AU', stars: '★★★★★', text: '"Used it to organise all my cables. Does the job and looks clean."' },
-    ]
+      { name: 'Tom H.', location: 'Chicago, USA', stars: 5, text: '"Excellent quality for the price. Holds everything firmly and peels off clean."' },
+      { name: 'Mia L.', location: 'Sydney, AU', stars: 5, text: '"Used for cable management at our live event — worked perfectly all weekend."' },
+      { name: 'Ryan K.', location: 'Manchester, UK', stars: 5, text: '"Best tape I\'ve ever used. The 3-pack is great value."' },
+    ],
   },
   {
     id: 2,
-    title: 'Carrot Cutter',
-    vendor: 'Kitchen Pro',
-    price: 12.99,
-    comparePrice: 18.99,
+    title: 'Carrot cutter',
+    vendor: 'Nestify Kitchen',
+    price: 24.50,
+    comparePrice: 32.00,
     badge: 'Sale',
-    badgeClass: 'sale',
     category: 'kitchen',
-    stars: '★★★★☆',
-    ratingCount: 89,
+    stars: 4.7, ratingCount: 89,
+    sku: 'NST-CC-002',
     images: [
       'https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=800&h=800&fit=crop&q=80',
       'https://images.unsplash.com/photo-1447175008436-054170c2e979?w=800&h=800&fit=crop&q=80',
@@ -55,32 +53,30 @@ const PRODUCTS = [
     ],
     variants: null,
     description: `
-      <p>Slice, dice, and julienne carrots in seconds with this ergonomic carrot cutter. Perfect for meal prep, soups, salads, and stir-fries.</p>
+      <p>Slice, dice and julienne carrots in seconds with this precision carrot cutter. An essential for any meal-prep routine.</p>
       <ul>
         <li>Food-grade stainless steel blades</li>
-        <li>BPA-free ABS plastic handle</li>
-        <li>Non-slip base for safety</li>
+        <li>BPA-free ergonomic handle</li>
+        <li>Non-slip suction base</li>
         <li>Dishwasher safe</li>
         <li>Multiple cut styles: rounds, julienne, half-moons</li>
       </ul>
     `,
-    sku: 'NST-CC-002',
     reviews: [
-      { name: 'Rachel B.', location: 'London, UK', stars: '★★★★☆', text: '"Cuts carrots so fast now! The non-slip base is really useful."' },
-      { name: 'Kevin S.', location: 'Dallas, USA', stars: '★★★★★', text: '"Excellent for meal prep. Blades are sharp and the plastic feels solid."' },
-    ]
+      { name: 'Rachel B.', location: 'London, UK', stars: 5, text: '"Prep time halved. The suction base keeps it totally stable while I use it."' },
+      { name: 'Kevin S.', location: 'Dallas, USA', stars: 4, text: '"Great for meal prep. Blades are sharp and it comes apart easily for cleaning."' },
+    ],
   },
   {
     id: 3,
-    title: 'Digital Food Measuring Spoon Scale',
-    vendor: 'Kitchen Pro',
-    price: 24.99,
+    title: 'Digital food Measuring spoon scale for kitchen',
+    vendor: 'Nestify Kitchen',
+    price: 32.00,
     comparePrice: null,
     badge: 'Best Seller',
-    badgeClass: '',
     category: 'kitchen',
-    stars: '★★★★★',
-    ratingCount: 312,
+    stars: 4.9, ratingCount: 312,
+    sku: 'NST-DMS-003',
     images: [
       'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=800&fit=crop&q=80',
       'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=800&h=800&fit=crop&q=80',
@@ -88,35 +84,32 @@ const PRODUCTS = [
     ],
     variants: null,
     description: `
-      <p>The world's most accurate measuring spoon — with a built-in digital scale. Perfect for baking, cooking, coffee brewing, and tracking nutrition.</p>
+      <p>The world's most precise measuring spoon — with a built-in digital scale. Perfect for baking, coffee brewing, and nutrition tracking.</p>
       <ul>
-        <li>Precision accuracy to 0.1g</li>
-        <li>Max capacity: 500g</li>
-        <li>Tare / zero function</li>
+        <li>Accuracy to 0.1g | Max 500g capacity</li>
         <li>4 units: g, oz, ml, tsp</li>
+        <li>Tare / zero function</li>
         <li>Includes 2× AAA batteries</li>
-        <li>Food-grade stainless steel spoon</li>
         <li>Auto power-off after 2 minutes</li>
+        <li>Food-grade stainless steel spoon bowl</li>
       </ul>
     `,
-    sku: 'NST-DMS-003',
     reviews: [
-      { name: 'Jessica A.', location: 'New York, USA', stars: '★★★★★', text: '"Changed my baking game completely. So accurate and easy to use."' },
-      { name: 'Daniel W.', location: 'Melbourne, AU', stars: '★★★★★', text: '"Brilliant for coffee dosing and protein powder. Well worth every penny."' },
-      { name: 'Claire M.', location: 'Paris, FR', stars: '★★★★★', text: '"Compact, precise and the display is super clear. Love it."' },
-    ]
+      { name: 'Jessica A.', location: 'New York, USA', stars: 5, text: '"Completely changed my baking. So accurate and the display is crystal clear."' },
+      { name: 'Daniel W.', location: 'Melbourne, AU', stars: 5, text: '"Perfect for coffee dosing and protein powder. Compact and accurate."' },
+      { name: 'Claire M.', location: 'Paris, FR', stars: 5, text: '"Compact, precise and easy to clean. Love it."' },
+    ],
   },
   {
     id: 4,
-    title: 'Silicone Stretch Lids (Set of 6)',
+    title: 'Flexible silicone bowl covers (Set of 6)',
     vendor: 'Nestify Green',
-    price: 14.99,
+    price: 19.99,
     comparePrice: null,
     badge: 'Eco Pick',
-    badgeClass: '',
     category: 'kitchen',
-    stars: '★★★★★',
-    ratingCount: 204,
+    stars: 4.8, ratingCount: 204,
+    sku: 'NST-SL-004',
     images: [
       'https://images.unsplash.com/photo-1584992236310-6edddc08acff?w=800&h=800&fit=crop&q=80',
       'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=800&fit=crop&q=80',
@@ -124,33 +117,30 @@ const PRODUCTS = [
     ],
     variants: ['Set of 6', 'Set of 12'],
     description: `
-      <p>Say goodbye to plastic wrap! These reusable silicone stretch lids create an airtight seal over any bowl, cup, can or container.</p>
+      <p>Replace plastic wrap for good. These reusable silicone stretch lids form an airtight seal over any bowl, cup, can or container.</p>
       <ul>
-        <li>Set of 6 in graduated sizes: XS–XL</li>
+        <li>6 graduated sizes: XS to XL</li>
         <li>Food-grade BPA-free silicone</li>
-        <li>Microwave, freezer & dishwasher safe</li>
-        <li>Stretch to fit round, square & irregular shapes</li>
-        <li>Reusable — replaces hundreds of single-use bags</li>
-        <li>Temperature range: -40°C to 230°C</li>
+        <li>Microwave, freezer &amp; dishwasher safe</li>
+        <li>Fits round, square &amp; irregular shapes</li>
+        <li>Temperature range: −40°C to 230°C</li>
       </ul>
     `,
-    sku: 'NST-SL-004',
     reviews: [
-      { name: 'Emma T.', location: 'Bristol, UK', stars: '★★★★★', text: '"These are incredible. They stretch over everything and seal perfectly."' },
-      { name: 'Noah G.', location: 'Vancouver, CA', stars: '★★★★★', text: '"Great eco alternative. So much better than cling film, and they last forever."' },
-    ]
+      { name: 'Emma T.', location: 'Bristol, UK', stars: 5, text: '"These stretch over literally everything. Airtight seal every time."' },
+      { name: 'Noah G.', location: 'Vancouver, CA', stars: 5, text: '"Zero plastic wrap in our house now. These are genuinely brilliant."' },
+    ],
   },
   {
     id: 5,
-    title: 'Apple Corer Slicer Peeler',
-    vendor: 'Kitchen Pro',
-    price: 19.99,
-    comparePrice: 27.99,
-    badge: 'Sale',
-    badgeClass: 'sale',
+    title: 'Apple corer slicer peeler',
+    vendor: 'Nestify Kitchen',
+    price: 45.00,
+    comparePrice: null,
+    badge: null,
     category: 'kitchen',
-    stars: '★★★★☆',
-    ratingCount: 167,
+    stars: 4.6, ratingCount: 167,
+    sku: 'NST-ACP-005',
     images: [
       'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=800&h=800&fit=crop&q=80',
       'https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800&h=800&fit=crop&q=80',
@@ -158,133 +148,123 @@ const PRODUCTS = [
     ],
     variants: null,
     description: `
-      <p>Core, slice, and peel an apple in under 10 seconds. Perfect for pies, snacks, baby food, and smoothies. Works on pears too!</p>
+      <p>Core, slice, and peel an apple in under 10 seconds. Perfect for pies, snacks, baby food, and smoothies. Works on pears and potatoes too.</p>
       <ul>
         <li>Stainless steel blades and peeling arm</li>
-        <li>Suction-cup base for stability</li>
-        <li>16-slice uniform cutting</li>
-        <li>Removable parts — fully dishwasher safe</li>
-        <li>Also works with pears, potatoes & kiwi</li>
-        <li>Compact fold-away design for easy storage</li>
+        <li>Heavy-duty suction-cup base</li>
+        <li>Produces 16 uniform slices</li>
+        <li>Fully dishwasher safe (removable parts)</li>
+        <li>Compact fold-away design for storage</li>
       </ul>
     `,
-    sku: 'NST-ACP-005',
     reviews: [
-      { name: 'Linda P.', location: 'Boston, USA', stars: '★★★★☆', text: '"Works perfectly for apple pies. Cores and peels in seconds!"' },
-      { name: 'Finn O.', location: 'Dublin, IE', stars: '★★★★★', text: '"My kids love apples now because I can prepare them so quickly with this."' },
-    ]
+      { name: 'Linda P.', location: 'Boston, USA', stars: 5, text: '"Cores and peels in seconds. My apple pies have never been easier to make."' },
+      { name: 'Finn O.', location: 'Dublin, IE', stars: 4, text: '"My kids love prepared apple snacks now. This gadget saves so much time."' },
+    ],
   },
   {
     id: 6,
-    title: 'Daily Wellness Supplements',
+    title: 'Nestify Essentials Supplements Collection',
     vendor: 'Nestify Health',
-    price: 34.99,
+    price: 18.99,
     comparePrice: null,
     badge: 'New',
-    badgeClass: '',
     category: 'health',
-    stars: '★★★★★',
-    ratingCount: 98,
+    stars: 4.8, ratingCount: 98,
+    sku: 'NST-SUP-006',
     images: [
-      'https://images.unsplash.com/photo-1550572017-edd951b55104?w=800&h=800&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1626716493137-b67fe9501e76?w=800&h=800&fit=crop&q=80',
       'https://images.unsplash.com/photo-1614468153291-fc9d72f47d34?w=800&h=800&fit=crop&q=80',
       'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=800&h=800&fit=crop&q=80',
     ],
-    variants: ['30 Capsules', '60 Capsules', '90 Capsules'],
+    variants: ['Wellness Vitamin C Complex — $18.99', 'Multivitamin For Her — $22.99', 'Immunity Booster Plus — $25.99'],
     description: `
-      <p>Fuel your body from the inside out with our comprehensive daily wellness blend. Formulated with clinically-backed ingredients for energy, immunity, and focus.</p>
+      <p>Our carefully formulated supplement collection supports your energy, immunity, and focus every day. Made with clinically-backed ingredients.</p>
       <ul>
-        <li>Vitamin C, D3, B12 & Zinc complex</li>
+        <li>Vitamin C, D3, B12 &amp; Zinc complex</li>
         <li>Omega-3 fatty acids (Fish Oil 1000mg)</li>
-        <li>Ashwagandha for stress support</li>
-        <li>Magnesium for sleep & muscle recovery</li>
-        <li>Vegan-friendly capsules (90-cap option)</li>
-        <li>No artificial colours, flavours or preservatives</li>
+        <li>Ashwagandha for stress resilience</li>
+        <li>Magnesium for sleep &amp; recovery</li>
+        <li>No artificial colours or preservatives</li>
         <li>Third-party lab tested for purity</li>
       </ul>
     `,
-    sku: 'NST-DWS-006',
     reviews: [
-      { name: 'Priya K.', location: 'Mumbai, IN', stars: '★★★★★', text: '"Noticeable improvement in energy levels after 3 weeks. Really impressed."' },
-      { name: 'Chris L.', location: 'San Francisco, USA', stars: '★★★★★', text: '"Clean ingredients list, no fillers. These are now a permanent part of my routine."' },
-    ]
+      { name: 'Priya K.', location: 'Mumbai, IN', stars: 5, text: '"Noticeable energy improvement within 2 weeks. Clean ingredients list."' },
+      { name: 'Chris L.', location: 'San Francisco, USA', stars: 5, text: '"These are now a permanent part of my morning routine."' },
+    ],
   },
   {
     id: 7,
-    title: 'Catagaroo Hoodie with Kangaroo Pocket',
+    title: 'Catagaroo Hoodies with Kangaroo Pouch for your cat',
     vendor: 'Nestify Apparel',
-    price: 49.99,
+    price: 59.99,
     comparePrice: null,
     badge: 'Limited',
-    badgeClass: '',
     category: 'apparel',
-    stars: '★★★★★',
-    ratingCount: 56,
+    stars: 5.0, ratingCount: 56,
+    sku: 'NST-CHK-007',
     images: [
-      'https://images.unsplash.com/photo-1520975954732-35dd22299614?w=800&h=800&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1602810319250-a663f0af2f75?w=800&h=800&fit=crop&q=80',
       'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=800&fit=crop&q=80',
       'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=800&h=800&fit=crop&q=80',
     ],
     variants: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
     description: `
-      <p>The coziest hoodie you'll ever own — featuring an extra-wide kangaroo pocket big enough to carry your cat, a small dog, or just all your snacks.</p>
+      <p>The original kangaroo-pouch hoodie — big enough for your cat, comfy enough for you. Featured by thousands of cat owners worldwide.</p>
       <ul>
-        <li>80% cotton / 20% polyester fleece blend</li>
-        <li>Extra-deep kangaroo front pocket</li>
+        <li>80% cotton / 20% polyester fleece</li>
+        <li>Extra-deep front kangaroo pouch for your cat</li>
         <li>Adjustable drawstring hood</li>
-        <li>Ribbed cuffs and hem</li>
-        <li>Unisex relaxed fit</li>
+        <li>Ribbed cuffs &amp; hem — unisex relaxed fit</li>
         <li>Machine washable — stays soft wash after wash</li>
-        <li>Available in Charcoal, Forest Green & Navy</li>
+        <li>Available in Charcoal, Forest Green &amp; Navy</li>
       </ul>
     `,
-    sku: 'NST-CHK-007',
     reviews: [
-      { name: 'Zoe F.', location: 'Edinburgh, UK', stars: '★★★★★', text: '"I literally carry my cat in the pocket. Life-changing purchase."' },
-      { name: 'Marcus D.', location: 'Berlin, DE', stars: '★★★★★', text: '"Incredibly soft and the fit is perfect. Already ordered two more colours."' },
-    ]
-  }
+      { name: 'Zoe F.', location: 'Edinburgh, UK', stars: 5, text: '"My cat literally lives in this pocket. I carry him around the house all day."' },
+      { name: 'Marcus D.', location: 'Berlin, DE', stars: 5, text: '"Incredibly soft and the kangaroo pocket is massive. My cat loves it."' },
+      { name: 'Lily S.', location: 'Toronto, CA', stars: 5, text: '"Best purchase of the year. Ordered three for the whole family."' },
+    ],
+  },
 ];
+
+// ── STAR RENDER ────────────────────────────────────────────────────────────
+function renderStars(n) {
+  const full = Math.floor(n);
+  const half = n % 1 >= 0.5 ? 1 : 0;
+  const empty = 5 - full - half;
+  return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty);
+}
 
 // ── CART (localStorage) ────────────────────────────────────────────────────
 function getCart() {
-  try { return JSON.parse(localStorage.getItem('nestify_cart')) || []; }
+  try { return JSON.parse(localStorage.getItem('nestify_cart_v2')) || []; }
   catch { return []; }
 }
-
 function saveCart(cart) {
-  localStorage.setItem('nestify_cart', JSON.stringify(cart));
+  localStorage.setItem('nestify_cart_v2', JSON.stringify(cart));
   updateCartBadge();
 }
-
 function updateCartBadge() {
-  const cart = getCart();
-  const total = cart.reduce((s, i) => s + i.qty, 0);
+  const total = getCart().reduce((s, i) => s + i.qty, 0);
   document.querySelectorAll('#cart-count').forEach(el => {
     el.textContent = total;
     el.style.display = total > 0 ? 'flex' : 'none';
   });
 }
-
-function addToCart(title, price, variant) {
+function addToCart(title, price, variant, image) {
   const cart = getCart();
   const key = title + (variant ? `|${variant}` : '');
   const existing = cart.find(i => i.key === key);
   if (existing) {
     existing.qty++;
   } else {
-    const prod = PRODUCTS.find(p => p.title === title || p.title.startsWith(title.replace(' Supplements','').trim()));
-    cart.push({
-      key,
-      title,
-      variant: variant || null,
-      price,
-      qty: 1,
-      image: prod ? prod.images[0] : ''
-    });
+    const prod = PRODUCTS.find(p => p.title === title);
+    cart.push({ key, title, variant: variant || null, price, qty: 1, image: image || (prod ? prod.images[0] : '') });
   }
   saveCart(cart);
-  showToast(`✓ "${title}" added to cart`);
+  showToast(`"${title.substring(0, 30)}${title.length > 30 ? '…' : ''}" added to cart`);
 }
 
 // ── TOAST ──────────────────────────────────────────────────────────────────
@@ -294,147 +274,135 @@ function showToast(msg) {
   if (!toast) return;
   msgEl.textContent = msg;
   toast.classList.add('show');
-  clearTimeout(toast._timer);
-  toast._timer = setTimeout(() => toast.classList.remove('show'), 3000);
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
-// ── NAV HELPERS ────────────────────────────────────────────────────────────
-function toggleMenu() {
-  const drawer = document.getElementById('mobile-drawer');
-  const overlay = document.getElementById('drawer-overlay');
-  if (!drawer) return;
-  drawer.classList.toggle('open');
-  overlay.classList.toggle('show');
-}
-
-function toggleSearch() {
-  showToast('Search coming soon!');
-}
-
-// ── QUANTITY ───────────────────────────────────────────────────────────────
+// ── QTY ────────────────────────────────────────────────────────────────────
 function changeQty(delta) {
   const input = document.getElementById('qty');
   if (!input) return;
-  const val = Math.max(1, Math.min(99, (parseInt(input.value) || 1) + delta));
-  input.value = val;
+  input.value = Math.max(1, Math.min(99, (parseInt(input.value) || 1) + delta));
 }
 
 // ── PRODUCT PAGE ───────────────────────────────────────────────────────────
-let currentProduct = null;
-let selectedVariant = null;
+let _prod = null;
+let _selectedVariant = null;
 
 function loadProduct(id) {
   const prod = PRODUCTS.find(p => p.id === id);
   if (!prod) { window.location.href = 'collections.html'; return; }
-  currentProduct = prod;
-  selectedVariant = prod.variants ? prod.variants[0] : null;
+  _prod = prod;
+  _selectedVariant = prod.variants ? prod.variants[0] : null;
 
   document.title = `${prod.title} — Nestify`;
-  document.getElementById('page-title').textContent = `${prod.title} — Nestify`;
-  document.getElementById('breadcrumb-title').textContent = prod.title;
-  document.getElementById('prod-vendor').textContent = prod.vendor;
-  document.getElementById('prod-title').textContent = prod.title;
-  document.getElementById('prod-stars').textContent = prod.stars;
-  document.getElementById('prod-rating-count').textContent = `(${prod.ratingCount} reviews)`;
-  document.getElementById('prod-price').textContent = `$${prod.price.toFixed(2)}`;
-  document.getElementById('prod-description').innerHTML = prod.description;
+  const ptEl = document.getElementById('page-title');
+  if (ptEl) ptEl.textContent = `${prod.title} — Nestify`;
 
-  if (prod.comparePrice) {
-    const comp = document.getElementById('prod-compare');
-    comp.textContent = `$${prod.comparePrice.toFixed(2)}`;
-    comp.style.display = 'inline';
-    document.getElementById('prod-price').classList.add('price-sale');
-  }
+  setEl('bc-title', prod.title);
+  setEl('prod-vendor', prod.vendor);
+  setEl('prod-title', prod.title);
 
-  document.getElementById('prod-meta').innerHTML = `
-    <p>SKU: <span>${prod.sku}</span></p>
-    <p>Vendor: <span>${prod.vendor}</span></p>
-    <p>Category: <span>${prod.category.charAt(0).toUpperCase() + prod.category.slice(1)}</span></p>
+  const starsEl = document.getElementById('prod-stars-block');
+  if (starsEl) starsEl.innerHTML = `
+    <span style="color:#c89000;font-size:14px;">${renderStars(prod.stars)}</span>
+    <span style="font-size:12px;color:var(--color-text-2);margin-left:4px;">${prod.ratingCount} reviews</span>
   `;
 
-  // Gallery
+  const priceEl = document.getElementById('prod-price');
+  if (priceEl) {
+    priceEl.textContent = `$${prod.price.toFixed(2)}`;
+    if (prod.comparePrice) priceEl.classList.add('sale');
+  }
+  const compEl = document.getElementById('prod-compare');
+  if (compEl && prod.comparePrice) {
+    compEl.textContent = `$${prod.comparePrice.toFixed(2)}`;
+    compEl.style.display = 'inline';
+  }
+
+  const descEl = document.getElementById('prod-desc');
+  if (descEl) descEl.innerHTML = prod.description;
+
+  const metaEl = document.getElementById('prod-meta');
+  if (metaEl) metaEl.innerHTML = `
+    <p>SKU: <span>${prod.sku}</span></p>
+    <p>Vendor: <span>${prod.vendor}</span></p>
+  `;
+
+  // gallery
   const mainImg = document.getElementById('main-img');
-  mainImg.src = prod.images[0];
-  mainImg.alt = prod.title;
-
-  const thumbs = document.getElementById('gallery-thumbs');
-  thumbs.innerHTML = prod.images.map((src, i) => `
-    <div class="gallery-thumb ${i === 0 ? 'active' : ''}" onclick="switchImage(${i})">
-      <img src="${src}" alt="${prod.title} ${i+1}" loading="lazy" />
-    </div>
-  `).join('');
-
-  // Variants
-  if (prod.variants) {
-    document.getElementById('variants-section').style.display = 'block';
-    document.getElementById('selected-variant').textContent = selectedVariant;
-    document.getElementById('variant-options').innerHTML = prod.variants.map(v => `
-      <button class="variant-btn ${v === selectedVariant ? 'active' : ''}" onclick="selectVariant('${v}')">${v}</button>
+  if (mainImg) { mainImg.src = prod.images[0]; mainImg.alt = prod.title; }
+  const thumbsEl = document.getElementById('gallery-thumbs');
+  if (thumbsEl) {
+    thumbsEl.innerHTML = prod.images.map((src, i) => `
+      <div class="gallery-thumb ${i === 0 ? 'active' : ''}" onclick="switchImg(${i})">
+        <img src="${src}" alt="${prod.title} view ${i+1}" loading="lazy" />
+      </div>
     `).join('');
   }
 
-  // Reviews
-  document.getElementById('review-heading').textContent = `${prod.ratingCount} Reviews for ${prod.title}`;
-  document.getElementById('reviews-grid').innerHTML = prod.reviews.map(r => `
-    <div class="testimonial-card">
-      <div class="testimonial-stars">${r.stars}</div>
-      <p class="testimonial-text">${r.text}</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">${r.name[0]}</div>
-        <div>
-          <div class="testimonial-name">${r.name}</div>
-          <div class="testimonial-location">${r.location}</div>
-        </div>
-      </div>
-    </div>
-  `).join('');
+  // variants
+  const varRow = document.getElementById('variant-row');
+  if (varRow && prod.variants) {
+    varRow.style.display = 'block';
+    setEl('selected-var-label', _selectedVariant);
+    const vbtns = document.getElementById('variant-btns');
+    if (vbtns) {
+      vbtns.innerHTML = prod.variants.map(v => `
+        <button class="size-btn ${v === _selectedVariant ? 'active' : ''}" onclick="selectVar('${v.replace(/'/g,"&#39;")}')">${v}</button>
+      `).join('');
+    }
+  }
 
-  // Related products (excluding current)
-  const related = PRODUCTS.filter(p => p.id !== id).slice(0, 4);
-  document.getElementById('related-grid').innerHTML = related.map(p => `
-    <div class="product-card">
-      <div class="product-card-media">
-        <img src="${p.images[0]}" alt="${p.title}" loading="lazy" />
-        <span class="product-badge ${p.badgeClass}">${p.badge}</span>
-        <div class="product-card-quick-add">
-          <button class="btn-green btn" onclick="addToCart('${p.title}', ${p.price})">Quick Add — $${p.price.toFixed(2)}</button>
-        </div>
+  // reviews
+  const rhEl = document.getElementById('reviews-heading');
+  if (rhEl) rhEl.textContent = `${prod.ratingCount} Reviews`;
+  const rgEl = document.getElementById('reviews-grid');
+  if (rgEl) {
+    rgEl.innerHTML = prod.reviews.map(r => `
+      <div class="testimonial-card">
+        <div class="testimonial-stars">${renderStars(r.stars)}</div>
+        <p class="testimonial-quote">${r.text}</p>
+        <div class="testimonial-author">${r.name}</div>
+        <div class="testimonial-location">${r.location}</div>
       </div>
-      <div class="product-card-info">
-        <p class="product-card-vendor">${p.vendor}</p>
-        <h3 class="product-card-title"><a href="product.html?id=${p.id}">${p.title}</a></h3>
-        <div class="product-price">
-          <span class="price ${p.comparePrice ? 'price-sale' : ''}">$${p.price.toFixed(2)}</span>
-          ${p.comparePrice ? `<span class="price-compare">$${p.comparePrice.toFixed(2)}</span>` : ''}
+    `).join('');
+  }
+
+  // related
+  const relEl = document.getElementById('related-grid');
+  if (relEl) {
+    const related = PRODUCTS.filter(p => p.id !== id).slice(0, 4);
+    relEl.innerHTML = related.map(p => `
+      <div class="product-card product-card-grid" onclick="window.location='product.html?id=${p.id}'" style="cursor:pointer;">
+        <div class="product-card-img-wrap">
+          <img src="${p.images[0]}" alt="${p.title}" loading="lazy" />
+          ${p.badge ? `<span class="product-card-badge ${p.badge === 'Sale' ? 'sale' : ''}">${p.badge}</span>` : ''}
         </div>
-        <div class="product-rating"><span class="stars">${p.stars}</span><span class="rating-count">(${p.ratingCount})</span></div>
+        <div class="product-card-title">${p.title}</div>
+        <div class="product-card-price">$${p.price.toFixed(2)}</div>
       </div>
-    </div>
-  `).join('');
+    `).join('');
+  }
 }
 
-function switchImage(index) {
-  if (!currentProduct) return;
-  document.getElementById('main-img').src = currentProduct.images[index];
-  document.querySelectorAll('.gallery-thumb').forEach((t, i) => {
-    t.classList.toggle('active', i === index);
-  });
+function switchImg(i) {
+  if (!_prod) return;
+  const el = document.getElementById('main-img');
+  if (el) el.src = _prod.images[i];
+  document.querySelectorAll('.gallery-thumb').forEach((t, idx) => t.classList.toggle('active', idx === i));
 }
 
-function selectVariant(variant) {
-  selectedVariant = variant;
-  document.getElementById('selected-variant').textContent = variant;
-  document.querySelectorAll('.variant-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent === variant);
-  });
+function selectVar(v) {
+  _selectedVariant = v;
+  setEl('selected-var-label', v);
+  document.querySelectorAll('.size-btn').forEach(b => b.classList.toggle('active', b.textContent.trim() === v));
 }
 
 function addCurrentToCart() {
-  if (!currentProduct) return;
+  if (!_prod) return;
   const qty = parseInt(document.getElementById('qty').value) || 1;
-  for (let i = 0; i < qty; i++) {
-    addToCart(currentProduct.title, currentProduct.price, selectedVariant);
-  }
+  for (let i = 0; i < qty; i++) addToCart(_prod.title, _prod.price, _selectedVariant, _prod.images[0]);
 }
 
 function buyNow() {
@@ -445,122 +413,102 @@ function buyNow() {
 // ── CART PAGE ──────────────────────────────────────────────────────────────
 function renderCartPage() {
   const cart = getCart();
-  const emptyEl = document.getElementById('empty-cart');
+  const emptyEl = document.getElementById('empty-state');
   const contentEl = document.getElementById('cart-content');
-  const countEl = document.getElementById('cart-item-count');
-
   if (!emptyEl) return;
 
   const totalQty = cart.reduce((s, i) => s + i.qty, 0);
-  countEl.textContent = totalQty > 0 ? `(${totalQty} item${totalQty !== 1 ? 's' : ''})` : '';
+  setEl('cart-item-count', totalQty > 0 ? `(${totalQty} item${totalQty !== 1 ? 's' : ''})` : '');
 
   if (cart.length === 0) {
     emptyEl.style.display = 'block';
     contentEl.style.display = 'none';
     return;
   }
-
   emptyEl.style.display = 'none';
   contentEl.style.display = 'grid';
 
   const listEl = document.getElementById('cart-items-list');
-  listEl.innerHTML = cart.map((item, idx) => `
-    <div class="cart-item" id="cart-item-${idx}">
-      <div class="cart-item-image">
-        <img src="${item.image || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=200&fit=crop'}" alt="${item.title}" loading="lazy" />
-      </div>
-      <div>
-        <div class="cart-item-title">${item.title}</div>
-        ${item.variant ? `<div class="cart-item-variant">${item.variant}</div>` : ''}
-        <div class="qty-selector" style="margin-top:10px;">
-          <button class="qty-btn" onclick="updateCartQty(${idx}, -1)">−</button>
-          <input class="qty-input" type="number" value="${item.qty}" min="1" max="99"
-            onchange="setCartQty(${idx}, this.value)" style="width:44px;" />
-          <button class="qty-btn" onclick="updateCartQty(${idx}, 1)">+</button>
+  if (listEl) {
+    listEl.innerHTML = cart.map((item, idx) => `
+      <div class="cart-item">
+        <div class="cart-img">
+          <img src="${item.image || ''}" alt="${item.title}" loading="lazy" />
         </div>
-        <div class="cart-item-remove" onclick="removeFromCart(${idx})">Remove</div>
+        <div>
+          <div class="cart-item-name">${item.title}</div>
+          ${item.variant ? `<div class="cart-item-variant">${item.variant}</div>` : ''}
+          <div class="cart-item-bottom">
+            <div style="display:flex;align-items:center;gap:0;">
+              <div class="qty-ctrl" style="transform:scale(.88);transform-origin:left;">
+                <button onclick="updateQty(${idx},-1)">−</button>
+                <input type="number" value="${item.qty}" min="1" max="99" onchange="setQty(${idx},this.value)" style="width:40px;height:34px;" />
+                <button onclick="updateQty(${idx},1)">+</button>
+              </div>
+            </div>
+            <div>
+              <div class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</div>
+              ${item.qty > 1 ? `<div style="font-size:11px;color:var(--color-text-2);">$${item.price.toFixed(2)} each</div>` : ''}
+            </div>
+          </div>
+          <div class="cart-remove" onclick="removeItem(${idx})">Remove</div>
+        </div>
       </div>
-      <div>
-        <div class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</div>
-        <div style="font-size:12px;color:var(--color-text-muted);margin-top:3px;">$${item.price.toFixed(2)} each</div>
-      </div>
-    </div>
-  `).join('');
+    `).join('');
+  }
 
-  updateCartSummary();
+  updateSummary();
 }
 
-function updateCartSummary() {
+function updateSummary() {
   const cart = getCart();
   const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
-  const totalQty = cart.reduce((s, i) => s + i.qty, 0);
-  const shipping = subtotal >= 50 ? 'Free' : '$4.99';
-  const shippingVal = subtotal >= 50 ? 0 : 4.99;
-  const total = subtotal + shippingVal;
+  const qty = cart.reduce((s, i) => s + i.qty, 0);
+  const freeShipping = subtotal >= 50;
+  const total = freeShipping ? subtotal : subtotal + 4.99;
 
-  const qtyEl = document.getElementById('sum-qty');
-  const subEl = document.getElementById('sum-subtotal');
+  setEl('sum-qty', `(${qty} item${qty !== 1 ? 's' : ''})`);
+  setEl('sum-subtotal', `$${subtotal.toFixed(2)}`);
+  setEl('sum-total', `$${total.toFixed(2)}`);
+
   const shipEl = document.getElementById('sum-shipping');
-  const totEl = document.getElementById('sum-total');
-
-  if (qtyEl) qtyEl.textContent = totalQty;
-  if (subEl) subEl.textContent = `$${subtotal.toFixed(2)}`;
   if (shipEl) {
-    shipEl.textContent = shipping;
-    shipEl.style.color = shipping === 'Free' ? 'var(--color-accent)' : '';
-    shipEl.style.fontWeight = shipping === 'Free' ? '700' : '';
+    if (freeShipping) {
+      shipEl.textContent = 'Free';
+      shipEl.style.color = 'var(--color-accent)';
+      shipEl.style.fontWeight = '700';
+    } else {
+      shipEl.textContent = '$4.99';
+      shipEl.style.color = 'var(--color-text-2)';
+      shipEl.style.fontWeight = '400';
+    }
   }
-  if (totEl) totEl.textContent = `$${total.toFixed(2)}`;
 }
 
-function updateCartQty(idx, delta) {
+function updateQty(idx, delta) {
   const cart = getCart();
   if (!cart[idx]) return;
   cart[idx].qty = Math.max(1, cart[idx].qty + delta);
-  saveCart(cart);
-  renderCartPage();
+  saveCart(cart); renderCartPage();
 }
-
-function setCartQty(idx, val) {
+function setQty(idx, val) {
   const cart = getCart();
   if (!cart[idx]) return;
   cart[idx].qty = Math.max(1, parseInt(val) || 1);
-  saveCart(cart);
-  renderCartPage();
+  saveCart(cart); renderCartPage();
 }
-
-function removeFromCart(idx) {
+function removeItem(idx) {
   const cart = getCart();
-  const name = cart[idx] ? cart[idx].title : 'Item';
+  const name = cart[idx]?.title || 'Item';
   cart.splice(idx, 1);
-  saveCart(cart);
-  renderCartPage();
-  showToast(`"${name}" removed from cart`);
+  saveCart(cart); renderCartPage();
+  showToast(`"${name.substring(0,30)}" removed`);
 }
 
-function checkout() {
-  showToast('Checkout coming soon! This is a prototype store.');
-}
-
-function applyPromo() {
-  const code = document.getElementById('promo-input').value.trim().toUpperCase();
-  const msg = document.getElementById('promo-msg');
-  if (code === 'NEST10') {
-    msg.textContent = '✓ 10% discount applied!';
-    msg.style.color = 'var(--color-accent)';
-    msg.style.display = 'block';
-  } else {
-    msg.textContent = '✗ Invalid discount code.';
-    msg.style.color = 'var(--color-error)';
-    msg.style.display = 'block';
-  }
-}
-
-// ── NEWSLETTER ─────────────────────────────────────────────────────────────
-function subscribeNewsletter(e) {
-  e.preventDefault();
-  showToast('🎉 You\'re subscribed! Check your inbox for a welcome discount.');
-  e.target.reset();
+// ── HELPERS ────────────────────────────────────────────────────────────────
+function setEl(id, html) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = html;
 }
 
 // ── INIT ───────────────────────────────────────────────────────────────────
