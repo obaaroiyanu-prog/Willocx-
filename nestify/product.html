@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Product — Nestify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/nestify-theme.css" />
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  🎉 Free shipping on orders over $50 &nbsp;·&nbsp; Use code <strong>NEST10</strong> for 10% off your first order
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="site-logo">Nest<span>ify</span></a>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="collections.html">Shop All</a>
+      <a href="collections.html#kitchen">Kitchen</a>
+      <a href="collections.html#health">Health</a>
+      <a href="collections.html#apparel">Apparel</a>
+    </nav>
+    <div class="header-actions">
+      <button aria-label="Search" onclick="toggleSearch()">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <a href="cart.html" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+      <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer-overlay" id="drawer-overlay" onclick="toggleMenu()"></div>
+<div class="mobile-drawer" id="mobile-drawer">
+  <div style="padding:24px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
+      <span class="site-logo">Nest<span>ify</span></span>
+      <button onclick="toggleMenu()" style="font-size:22px;background:none;border:none;cursor:pointer;">✕</button>
+    </div>
+    <nav style="display:flex;flex-direction:column;gap:20px;">
+      <a href="index.html" style="font-size:18px;font-weight:600;">Home</a>
+      <a href="collections.html" style="font-size:18px;font-weight:600;">Shop All</a>
+      <a href="cart.html" style="font-size:18px;font-weight:600;">Cart</a>
+    </nav>
+  </div>
+</div>
+
+<!-- PRODUCT PAGE -->
+<main class="product-page">
+  <div class="container">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="collections.html">All Products</a>
+      <span class="breadcrumb-sep">/</span>
+      <span id="breadcrumb-title">Product</span>
+    </nav>
+
+    <div class="product-layout">
+
+      <!-- GALLERY -->
+      <div class="product-gallery">
+        <div class="gallery-main">
+          <img id="main-img" src="" alt="Product" />
+        </div>
+        <div class="gallery-thumbs" id="gallery-thumbs"></div>
+      </div>
+
+      <!-- INFO -->
+      <div class="product-info">
+        <p class="product-vendor" id="prod-vendor"></p>
+        <h1 class="product-title" id="prod-title"></h1>
+
+        <div class="product-rating-bar">
+          <span class="stars" id="prod-stars">★★★★★</span>
+          <span class="rating-count" id="prod-rating-count">(0)</span>
+          <span class="divider">|</span>
+          <a href="#reviews">Read reviews</a>
+        </div>
+
+        <div class="product-price-block">
+          <span class="price" id="prod-price"></span>
+          <span class="price-compare" id="prod-compare" style="display:none;"></span>
+        </div>
+
+        <div class="product-description" id="prod-description"></div>
+
+        <!-- VARIANTS -->
+        <div id="variants-section" style="display:none;">
+          <p class="variant-label">Select Option: <strong id="selected-variant"></strong></p>
+          <div class="variant-options" id="variant-options"></div>
+        </div>
+
+        <!-- QUANTITY -->
+        <div class="qty-selector">
+          <label>Quantity:</label>
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <input class="qty-input" type="number" id="qty" value="1" min="1" max="99" />
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="product-actions">
+          <button class="btn-add-cart btn" onclick="addCurrentToCart()">Add to Cart</button>
+          <button class="btn-buy-now btn" onclick="buyNow()">Buy It Now</button>
+        </div>
+
+        <!-- META -->
+        <div class="product-meta" id="prod-meta"></div>
+
+        <!-- TRUST BADGES -->
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24"><path d="M5 12H19M12 5l7 7-7 7"/></svg>
+            Free shipping over $50
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            30-day returns
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Secure checkout
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            In stock & ready to ship
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVIEWS SECTION -->
+    <div id="reviews" style="margin-top:72px; padding-top:40px; border-top:1px solid var(--color-border);">
+      <div class="section-header" style="text-align:left;margin-bottom:32px;">
+        <p class="eyebrow">Customer Reviews</p>
+        <h2 style="font-size:26px;" id="review-heading">Reviews</h2>
+      </div>
+      <div class="testimonials-grid" id="reviews-grid"></div>
+    </div>
+
+    <!-- RELATED PRODUCTS -->
+    <div style="margin-top:72px; padding-top:40px; border-top:1px solid var(--color-border);">
+      <div class="section-header">
+        <p class="eyebrow">You May Also Like</p>
+        <h2 style="font-size:26px;">Related Products</h2>
+      </div>
+      <div class="product-grid" id="related-grid"></div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="site-logo">Nest<span>ify</span></a>
+        <p>Premium home & kitchen essentials for the modern household.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+          <a href="#" aria-label="Pinterest">📌</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="collections.html">All Products</a></li>
+          <li><a href="collections.html#kitchen">Kitchen Tools</a></li>
+          <li><a href="collections.html#health">Health & Wellness</a></li>
+          <li><a href="collections.html#apparel">Apparel</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Nestify. All rights reserved.</p>
+      <div class="footer-payments">
+        <span class="payment-badge">VISA</span>
+        <span class="payment-badge">Mastercard</span>
+        <span class="payment-badge">PayPal</span>
+        <span class="payment-badge">Apple Pay</span>
+        <span class="payment-badge">Shop Pay</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">
+  <span class="toast-icon">✓</span>
+  <span id="toast-msg">Added to cart!</span>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  // Load product data on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get('id')) || 1;
+    loadProduct(id);
+  });
+</script>
+</body>
+</html>

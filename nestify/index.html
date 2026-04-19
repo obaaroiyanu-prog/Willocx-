@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nestify — Smart Home & Kitchen Essentials</title>
+  <meta name="description" content="Discover premium home & kitchen products at Nestify. Free shipping on orders over $50." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/nestify-theme.css" />
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  🎉 Free shipping on orders over $50 &nbsp;·&nbsp; Use code <strong>NEST10</strong> for 10% off your first order
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="site-logo">Nest<span>ify</span></a>
+
+    <nav class="header-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="collections.html">Shop All</a>
+      <a href="collections.html#kitchen">Kitchen</a>
+      <a href="collections.html#health">Health</a>
+      <a href="collections.html#apparel">Apparel</a>
+    </nav>
+
+    <div class="header-actions">
+      <button aria-label="Search" onclick="toggleSearch()">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <a href="cart.html" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+      <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER OVERLAY -->
+<div class="drawer-overlay" id="drawer-overlay" onclick="toggleMenu()"></div>
+<div class="mobile-drawer" id="mobile-drawer">
+  <div style="padding:24px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
+      <span class="site-logo">Nest<span>ify</span></span>
+      <button onclick="toggleMenu()" style="font-size:22px;background:none;border:none;cursor:pointer;">✕</button>
+    </div>
+    <nav style="display:flex;flex-direction:column;gap:20px;">
+      <a href="index.html" style="font-size:18px;font-weight:600;">Home</a>
+      <a href="collections.html" style="font-size:18px;font-weight:600;">Shop All</a>
+      <a href="collections.html#kitchen" style="font-size:18px;font-weight:600;">Kitchen</a>
+      <a href="collections.html#health" style="font-size:18px;font-weight:600;">Health</a>
+      <a href="collections.html#apparel" style="font-size:18px;font-weight:600;">Apparel</a>
+      <a href="cart.html" style="font-size:18px;font-weight:600;">Cart</a>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-eyebrow">New arrivals — Spring 2025</p>
+      <h1>Your Home,<br/>Elevated.</h1>
+      <p>Premium kitchen tools, health supplements, and cosy apparel — everything your nest needs, delivered to your door.</p>
+      <div class="hero-btns">
+        <a href="collections.html" class="btn btn-primary">Shop All Products</a>
+        <a href="collections.html#kitchen" class="btn btn-secondary">Kitchen Essentials</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE BAND -->
+<div class="marquee-band">
+  <div class="marquee-track" id="marquee-track">
+    <span class="marquee-item">Free Shipping Over $50</span>
+    <span class="marquee-item">30-Day Returns</span>
+    <span class="marquee-item">Premium Quality</span>
+    <span class="marquee-item">10,000+ Happy Customers</span>
+    <span class="marquee-item">Secure Checkout</span>
+    <span class="marquee-item">Same-Day Dispatch</span>
+    <span class="marquee-item">Free Shipping Over $50</span>
+    <span class="marquee-item">30-Day Returns</span>
+    <span class="marquee-item">Premium Quality</span>
+    <span class="marquee-item">10,000+ Happy Customers</span>
+    <span class="marquee-item">Secure Checkout</span>
+    <span class="marquee-item">Same-Day Dispatch</span>
+  </div>
+</div>
+
+<!-- FEATURES BAR -->
+<section class="section" style="padding:48px 0;">
+  <div class="container">
+    <div class="features-bar">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 12H19M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>Free Shipping</h4>
+          <p>On all orders over $50. Fast tracked delivery.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>30-Day Returns</h4>
+          <p>Not happy? Return it — no questions asked.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>Secure Payments</h4>
+          <p>256-bit SSL encryption on all transactions.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.77 16z"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>24/7 Support</h4>
+          <p>Real humans ready to help you any time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">Bestsellers</p>
+      <h2>Most Loved Products</h2>
+      <p>Handpicked favourites trusted by thousands of happy customers</p>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- 1. Black Tape -->
+      <div class="product-card">
+        <div class="product-card-media">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&q=80" alt="Black Tape" loading="lazy" />
+          <span class="product-badge">In Stock</span>
+          <div class="product-card-quick-add">
+            <button class="btn-green btn" onclick="addToCart('Black Tape', 5.99)">Quick Add — $5.99</button>
+          </div>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-vendor">Nestify Basics</p>
+          <h3 class="product-card-title"><a href="product.html?id=1">Black Tape</a></h3>
+          <div class="product-price"><span class="price">$5.99</span></div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(142)</span></div>
+        </div>
+      </div>
+
+      <!-- 2. Carrot Cutter -->
+      <div class="product-card">
+        <div class="product-card-media">
+          <img src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=600&h=600&fit=crop&q=80" alt="Carrot Cutter" loading="lazy" />
+          <span class="product-badge sale">Sale</span>
+          <div class="product-card-quick-add">
+            <button class="btn-green btn" onclick="addToCart('Carrot Cutter', 12.99)">Quick Add — $12.99</button>
+          </div>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-vendor">Kitchen Pro</p>
+          <h3 class="product-card-title"><a href="product.html?id=2">Carrot Cutter</a></h3>
+          <div class="product-price">
+            <span class="price price-sale">$12.99</span>
+            <span class="price-compare">$18.99</span>
+          </div>
+          <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(89)</span></div>
+        </div>
+      </div>
+
+      <!-- 3. Digital Measuring Spoon Scale -->
+      <div class="product-card">
+        <div class="product-card-media">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=600&fit=crop&q=80" alt="Digital Measuring Spoon Scale" loading="lazy" />
+          <span class="product-badge">Best Seller</span>
+          <div class="product-card-quick-add">
+            <button class="btn-green btn" onclick="addToCart('Digital Food Measuring Spoon Scale', 24.99)">Quick Add — $24.99</button>
+          </div>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-vendor">Kitchen Pro</p>
+          <h3 class="product-card-title"><a href="product.html?id=3">Digital Food Measuring Spoon Scale</a></h3>
+          <div class="product-price"><span class="price">$24.99</span></div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(312)</span></div>
+        </div>
+      </div>
+
+      <!-- 4. Silicone Stretch Lids -->
+      <div class="product-card">
+        <div class="product-card-media">
+          <img src="https://images.unsplash.com/photo-1584992236310-6edddc08acff?w=600&h=600&fit=crop&q=80" alt="Silicone Stretch Lids" loading="lazy" />
+          <span class="product-badge">Eco Pick</span>
+          <div class="product-card-quick-add">
+            <button class="btn-green btn" onclick="addToCart('Silicone Stretch Lids', 14.99)">Quick Add — $14.99</button>
+          </div>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-vendor">Nestify Green</p>
+          <h3 class="product-card-title"><a href="product.html?id=4">Silicone Stretch Lids (Set of 6)</a></h3>
+          <div class="product-price"><span class="price">$14.99</span></div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(204)</span></div>
+        </div>
+      </div>
+
+      <!-- 5. Apple Corer Slicer Peeler -->
+      <div class="product-card">
+        <div class="product-card-media">
+          <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=600&h=600&fit=crop&q=80" alt="Apple Corer Slicer Peeler" loading="lazy" />
+          <span class="product-badge sale">Sale</span>
+          <div class="product-card-quick-add">
+            <button class="btn-green btn" onclick="addToCart('Apple Corer Slicer Peeler', 19.99)">Quick Add — $19.99</button>
+          </div>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-vendor">Kitchen Pro</p>
+          <h3 class="product-card-title"><a href="product.html?id=5">Apple Corer Slicer Peeler</a></h3>
+          <div class="product-price">
+            <span class="price price-sale">$19.99</span>
+            <span class="price-compare">$27.99</span>
+          </div>
+          <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(167)</span></div>
+        </div>
+      </div>
+
+      <!-- 6. Supplements -->
+      <div class="product-card">
+        <div class="product-card-media">
+          <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=600&fit=crop&q=80" alt="Supplements" loading="lazy" />
+          <span class="product-badge">New</span>
+          <div class="product-card-quick-add">
+            <button class="btn-green btn" onclick="addToCart('Supplements', 34.99)">Quick Add — $34.99</button>
+          </div>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-vendor">Nestify Health</p>
+          <h3 class="product-card-title"><a href="product.html?id=6">Daily Wellness Supplements</a></h3>
+          <div class="product-price"><span class="price">$34.99</span></div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(98)</span></div>
+        </div>
+      </div>
+
+      <!-- 7. Catagaroo Hoodie -->
+      <div class="product-card" style="grid-column: span 1;">
+        <div class="product-card-media">
+          <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?w=600&h=600&fit=crop&q=80" alt="Catagaroo Hoodie with Kangaroo" loading="lazy" />
+          <span class="product-badge">Limited</span>
+          <div class="product-card-quick-add">
+            <button class="btn-green btn" onclick="addToCart('Catagaroo Hoodie', 49.99)">Quick Add — $49.99</button>
+          </div>
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-vendor">Nestify Apparel</p>
+          <h3 class="product-card-title"><a href="product.html?id=7">Catagaroo Hoodie with Kangaroo Pocket</a></h3>
+          <div class="product-price"><span class="price">$49.99</span></div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(56)</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:44px;">
+      <a href="collections.html" class="btn btn-outline">View All Products →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">Browse By Category</p>
+      <h2>Shop the Collection</h2>
+    </div>
+    <div class="categories-grid">
+      <div class="category-card" onclick="window.location='collections.html#kitchen'">
+        <img class="category-card-bg" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=533&fit=crop&q=80" alt="Kitchen" />
+        <div class="category-overlay">
+          <div>
+            <div class="category-label">Kitchen Tools</div>
+            <div class="category-count">5 products</div>
+          </div>
+        </div>
+      </div>
+      <div class="category-card" onclick="window.location='collections.html#health'">
+        <img class="category-card-bg" src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&h=533&fit=crop&q=80" alt="Health" />
+        <div class="category-overlay">
+          <div>
+            <div class="category-label">Health & Wellness</div>
+            <div class="category-count">1 product</div>
+          </div>
+        </div>
+      </div>
+      <div class="category-card" onclick="window.location='collections.html#apparel'">
+        <img class="category-card-bg" src="https://images.unsplash.com/photo-1520975954732-35dd22299614?w=400&h=533&fit=crop&q=80" alt="Apparel" />
+        <div class="category-overlay">
+          <div>
+            <div class="category-label">Apparel</div>
+            <div class="category-count">1 product</div>
+          </div>
+        </div>
+      </div>
+      <div class="category-card" onclick="window.location='collections.html'">
+        <img class="category-card-bg" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=533&fit=crop&q=80" alt="Essentials" />
+        <div class="category-overlay">
+          <div>
+            <div class="category-label">Home Essentials</div>
+            <div class="category-count">7 products</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">Reviews</p>
+      <h2>What Our Customers Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The Digital Measuring Spoon Scale is a game changer for meal prep. Accurate to 0.1g and so easy to clean. Genuinely couldn't cook without it now."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <div class="testimonial-name">Sarah M.</div>
+            <div class="testimonial-location">New York, USA</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Ordered the Silicone Stretch Lids and the Carrot Cutter together. Both fantastic quality. The lids are so stretchy and seal perfectly. Fast shipping too!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <div class="testimonial-name">James T.</div>
+            <div class="testimonial-location">London, UK</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The Catagaroo Hoodie is so incredibly cosy. The kangaroo pocket is massive and perfect for carrying my cat around. 10/10 would buy again."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Anya R.</div>
+            <div class="testimonial-location">Toronto, CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section">
+  <div class="container">
+    <div class="newsletter">
+      <div class="newsletter-copy">
+        <h2>Join the Nestify Family</h2>
+        <p>Get exclusive deals, new arrivals & kitchen tips straight to your inbox.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="site-logo">Nest<span>ify</span></a>
+        <p>Premium home & kitchen essentials for the modern household. We believe your home should work as hard as you do.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+          <a href="#" aria-label="Pinterest">📌</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="collections.html">All Products</a></li>
+          <li><a href="collections.html#kitchen">Kitchen Tools</a></li>
+          <li><a href="collections.html#health">Health & Wellness</a></li>
+          <li><a href="collections.html#apparel">Apparel</a></li>
+          <li><a href="collections.html">New Arrivals</a></li>
+          <li><a href="collections.html">Sale</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#">Order Tracking</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Affiliates</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Nestify. All rights reserved.</p>
+      <div class="footer-payments">
+        <span class="payment-badge">VISA</span>
+        <span class="payment-badge">Mastercard</span>
+        <span class="payment-badge">PayPal</span>
+        <span class="payment-badge">Apple Pay</span>
+        <span class="payment-badge">Shop Pay</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="toast-icon">✓</span>
+  <span id="toast-msg">Added to cart!</span>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

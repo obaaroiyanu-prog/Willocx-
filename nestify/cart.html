@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart — Nestify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/nestify-theme.css" />
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  🎉 Free shipping on orders over $50 &nbsp;·&nbsp; Use code <strong>NEST10</strong> for 10% off your first order
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="site-logo">Nest<span>ify</span></a>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="collections.html">Shop All</a>
+      <a href="collections.html#kitchen">Kitchen</a>
+      <a href="collections.html#health">Health</a>
+      <a href="collections.html#apparel">Apparel</a>
+    </nav>
+    <div class="header-actions">
+      <button aria-label="Search" onclick="toggleSearch()">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <a href="cart.html" aria-label="Cart" class="active">
+        <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+      <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer-overlay" id="drawer-overlay" onclick="toggleMenu()"></div>
+<div class="mobile-drawer" id="mobile-drawer">
+  <div style="padding:24px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
+      <span class="site-logo">Nest<span>ify</span></span>
+      <button onclick="toggleMenu()" style="font-size:22px;background:none;border:none;cursor:pointer;">✕</button>
+    </div>
+    <nav style="display:flex;flex-direction:column;gap:20px;">
+      <a href="index.html" style="font-size:18px;font-weight:600;">Home</a>
+      <a href="collections.html" style="font-size:18px;font-weight:600;">Shop All</a>
+      <a href="cart.html" style="font-size:18px;font-weight:600;">Cart</a>
+    </nav>
+  </div>
+</div>
+
+<!-- CART PAGE -->
+<main class="cart-page">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Cart</span>
+    </nav>
+
+    <h1>Your Cart <span id="cart-item-count" style="font-size:22px;font-weight:400;color:var(--color-text-muted);"></span></h1>
+
+    <!-- EMPTY STATE -->
+    <div class="empty-cart" id="empty-cart" style="display:none;">
+      <svg viewBox="0 0 24 24">
+        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </svg>
+      <h2>Your cart is empty</h2>
+      <p>Looks like you haven't added anything yet. Let's change that!</p>
+      <a href="collections.html" class="btn btn-dark">Browse Products</a>
+    </div>
+
+    <!-- CART CONTENT -->
+    <div class="cart-layout" id="cart-content">
+
+      <!-- ITEMS -->
+      <div>
+        <div class="cart-items" id="cart-items-list"></div>
+
+        <!-- CONTINUE SHOPPING -->
+        <div style="margin-top:24px;">
+          <a href="collections.html" style="font-size:13px;color:var(--color-text-muted);display:inline-flex;align-items:center;gap:6px;">
+            ← Continue shopping
+          </a>
+        </div>
+      </div>
+
+      <!-- SUMMARY -->
+      <div>
+        <div class="cart-summary">
+          <h3>Order Summary</h3>
+
+          <div class="summary-line">
+            <span>Subtotal (<span id="sum-qty">0</span> items)</span>
+            <span id="sum-subtotal">$0.00</span>
+          </div>
+          <div class="summary-line">
+            <span>Shipping</span>
+            <span id="sum-shipping">Calculated at checkout</span>
+          </div>
+          <div class="summary-line">
+            <span>Discount</span>
+            <span id="sum-discount" style="color:var(--color-sale);">—</span>
+          </div>
+
+          <div class="summary-total">
+            <span>Estimated Total</span>
+            <span id="sum-total">$0.00</span>
+          </div>
+
+          <button class="btn-green btn" onclick="checkout()" style="margin-bottom:12px;">
+            Proceed to Checkout →
+          </button>
+          <button class="btn btn-outline" onclick="window.location='collections.html'" style="width:100%;padding:13px;">
+            Continue Shopping
+          </button>
+
+          <!-- PROMO CODE -->
+          <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--color-border);">
+            <p style="font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px;">Discount Code</p>
+            <div style="display:flex;gap:0;">
+              <input type="text" id="promo-input" placeholder="NEST10" style="flex:1;padding:10px 14px;border:1px solid var(--color-border);border-radius:var(--radius) 0 0 var(--radius);font-size:13px;font-family:inherit;outline:none;" />
+              <button onclick="applyPromo()" style="padding:10px 16px;background:var(--color-text);color:#fff;font-size:13px;font-weight:600;border-radius:0 var(--radius) var(--radius) 0;font-family:inherit;cursor:pointer;border:none;">Apply</button>
+            </div>
+            <p id="promo-msg" style="font-size:12px;margin-top:6px;color:var(--color-accent);display:none;">✓ Discount applied!</p>
+          </div>
+
+          <!-- NOTE -->
+          <div class="cart-note" style="margin-top:16px;">
+            <label for="order-note">Order Note</label>
+            <textarea id="order-note" placeholder="Any special instructions? Gift message?"></textarea>
+          </div>
+
+          <!-- TRUST BADGES -->
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--color-border);">
+            <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-text-muted);">
+              <span>🔒</span> SSL encrypted secure checkout
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-text-muted);">
+              <span>↩️</span> 30-day hassle-free returns
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-text-muted);">
+              <span>🚚</span> Free shipping on orders over $50
+            </div>
+          </div>
+        </div>
+
+        <!-- PAYMENT ICONS -->
+        <div style="text-align:center;margin-top:16px;">
+          <p style="font-size:11px;color:var(--color-text-muted);margin-bottom:8px;">We accept</p>
+          <div class="footer-payments" style="justify-content:center;">
+            <span class="payment-badge">VISA</span>
+            <span class="payment-badge">Mastercard</span>
+            <span class="payment-badge">PayPal</span>
+            <span class="payment-badge">Apple Pay</span>
+            <span class="payment-badge">Shop Pay</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="site-logo">Nest<span>ify</span></a>
+        <p>Premium home & kitchen essentials for the modern household.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="collections.html">All Products</a></li>
+          <li><a href="collections.html#kitchen">Kitchen Tools</a></li>
+          <li><a href="collections.html#health">Health & Wellness</a></li>
+          <li><a href="collections.html#apparel">Apparel</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Nestify. All rights reserved.</p>
+      <div class="footer-payments">
+        <span class="payment-badge">VISA</span>
+        <span class="payment-badge">Mastercard</span>
+        <span class="payment-badge">PayPal</span>
+        <span class="payment-badge">Apple Pay</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">
+  <span class="toast-icon">✓</span>
+  <span id="toast-msg">Item removed from cart.</span>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', renderCartPage);
+</script>
+</body>
+</html>

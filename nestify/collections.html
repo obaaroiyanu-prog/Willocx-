@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Products — Nestify</title>
+  <meta name="description" content="Browse all Nestify products — kitchen tools, health supplements, and cosy apparel." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/nestify-theme.css" />
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  🎉 Free shipping on orders over $50 &nbsp;·&nbsp; Use code <strong>NEST10</strong> for 10% off your first order
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="site-logo">Nest<span>ify</span></a>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="collections.html" class="active">Shop All</a>
+      <a href="collections.html#kitchen">Kitchen</a>
+      <a href="collections.html#health">Health</a>
+      <a href="collections.html#apparel">Apparel</a>
+    </nav>
+    <div class="header-actions">
+      <button aria-label="Search" onclick="toggleSearch()">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <a href="cart.html" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+      <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer-overlay" id="drawer-overlay" onclick="toggleMenu()"></div>
+<div class="mobile-drawer" id="mobile-drawer">
+  <div style="padding:24px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
+      <span class="site-logo">Nest<span>ify</span></span>
+      <button onclick="toggleMenu()" style="font-size:22px;background:none;border:none;cursor:pointer;">✕</button>
+    </div>
+    <nav style="display:flex;flex-direction:column;gap:20px;">
+      <a href="index.html" style="font-size:18px;font-weight:600;">Home</a>
+      <a href="collections.html" style="font-size:18px;font-weight:600;">Shop All</a>
+      <a href="cart.html" style="font-size:18px;font-weight:600;">Cart</a>
+    </nav>
+  </div>
+</div>
+
+<!-- COLLECTION HERO -->
+<div class="collection-hero">
+  <div class="container">
+    <h1>All Products</h1>
+    <p>7 premium items for your home, kitchen & wellbeing</p>
+  </div>
+</div>
+
+<!-- FILTER TOOLBAR -->
+<div class="container">
+  <div class="collection-toolbar">
+    <span class="toolbar-left">Showing <strong>7</strong> products</span>
+    <div class="toolbar-right">
+      <label style="font-size:13px;font-weight:600;" for="filter-cat">Filter:</label>
+      <select class="filter-select" id="filter-cat" onchange="filterProducts(this.value)">
+        <option value="all">All Categories</option>
+        <option value="kitchen">Kitchen Tools</option>
+        <option value="health">Health & Wellness</option>
+        <option value="apparel">Apparel</option>
+        <option value="essentials">Home Essentials</option>
+      </select>
+      <label style="font-size:13px;font-weight:600;" for="sort-by">Sort:</label>
+      <select class="filter-select" id="sort-by" onchange="sortProducts(this.value)">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+        <option value="best-selling">Best Selling</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="section" style="padding-top:0;" id="all">
+  <div class="container">
+
+    <!-- KITCHEN SECTION -->
+    <div id="kitchen" style="margin-bottom:56px;">
+      <h2 style="font-family:var(--font-heading);font-size:22px;font-weight:700;margin-bottom:28px;padding-bottom:12px;border-bottom:2px solid var(--color-border);">
+        🍳 Kitchen Tools
+      </h2>
+      <div class="product-grid" id="kitchen-grid">
+
+        <div class="product-card" data-category="essentials" data-price="5.99">
+          <div class="product-card-media">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&q=80" alt="Black Tape" loading="lazy" />
+            <span class="product-badge">In Stock</span>
+            <div class="product-card-quick-add">
+              <button class="btn-green btn" onclick="addToCart('Black Tape', 5.99)">Quick Add — $5.99</button>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <p class="product-card-vendor">Nestify Basics</p>
+            <h3 class="product-card-title"><a href="product.html?id=1">Black Tape</a></h3>
+            <div class="product-price"><span class="price">$5.99</span></div>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(142)</span></div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="kitchen" data-price="12.99">
+          <div class="product-card-media">
+            <img src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=600&h=600&fit=crop&q=80" alt="Carrot Cutter" loading="lazy" />
+            <span class="product-badge sale">Sale</span>
+            <div class="product-card-quick-add">
+              <button class="btn-green btn" onclick="addToCart('Carrot Cutter', 12.99)">Quick Add — $12.99</button>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <p class="product-card-vendor">Kitchen Pro</p>
+            <h3 class="product-card-title"><a href="product.html?id=2">Carrot Cutter</a></h3>
+            <div class="product-price">
+              <span class="price price-sale">$12.99</span>
+              <span class="price-compare">$18.99</span>
+            </div>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(89)</span></div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="kitchen" data-price="24.99">
+          <div class="product-card-media">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=600&fit=crop&q=80" alt="Digital Measuring Spoon Scale" loading="lazy" />
+            <span class="product-badge">Best Seller</span>
+            <div class="product-card-quick-add">
+              <button class="btn-green btn" onclick="addToCart('Digital Food Measuring Spoon Scale', 24.99)">Quick Add — $24.99</button>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <p class="product-card-vendor">Kitchen Pro</p>
+            <h3 class="product-card-title"><a href="product.html?id=3">Digital Food Measuring Spoon Scale</a></h3>
+            <div class="product-price"><span class="price">$24.99</span></div>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(312)</span></div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="kitchen" data-price="14.99">
+          <div class="product-card-media">
+            <img src="https://images.unsplash.com/photo-1584992236310-6edddc08acff?w=600&h=600&fit=crop&q=80" alt="Silicone Stretch Lids" loading="lazy" />
+            <span class="product-badge">Eco Pick</span>
+            <div class="product-card-quick-add">
+              <button class="btn-green btn" onclick="addToCart('Silicone Stretch Lids', 14.99)">Quick Add — $14.99</button>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <p class="product-card-vendor">Nestify Green</p>
+            <h3 class="product-card-title"><a href="product.html?id=4">Silicone Stretch Lids (Set of 6)</a></h3>
+            <div class="product-price"><span class="price">$14.99</span></div>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(204)</span></div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="kitchen" data-price="19.99">
+          <div class="product-card-media">
+            <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=600&h=600&fit=crop&q=80" alt="Apple Corer Slicer Peeler" loading="lazy" />
+            <span class="product-badge sale">Sale</span>
+            <div class="product-card-quick-add">
+              <button class="btn-green btn" onclick="addToCart('Apple Corer Slicer Peeler', 19.99)">Quick Add — $19.99</button>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <p class="product-card-vendor">Kitchen Pro</p>
+            <h3 class="product-card-title"><a href="product.html?id=5">Apple Corer Slicer Peeler</a></h3>
+            <div class="product-price">
+              <span class="price price-sale">$19.99</span>
+              <span class="price-compare">$27.99</span>
+            </div>
+            <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(167)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEALTH SECTION -->
+    <div id="health" style="margin-bottom:56px;">
+      <h2 style="font-family:var(--font-heading);font-size:22px;font-weight:700;margin-bottom:28px;padding-bottom:12px;border-bottom:2px solid var(--color-border);">
+        💊 Health & Wellness
+      </h2>
+      <div class="product-grid">
+        <div class="product-card" data-category="health" data-price="34.99">
+          <div class="product-card-media">
+            <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=600&h=600&fit=crop&q=80" alt="Supplements" loading="lazy" />
+            <span class="product-badge">New</span>
+            <div class="product-card-quick-add">
+              <button class="btn-green btn" onclick="addToCart('Daily Wellness Supplements', 34.99)">Quick Add — $34.99</button>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <p class="product-card-vendor">Nestify Health</p>
+            <h3 class="product-card-title"><a href="product.html?id=6">Daily Wellness Supplements</a></h3>
+            <div class="product-price"><span class="price">$34.99</span></div>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(98)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- APPAREL SECTION -->
+    <div id="apparel">
+      <h2 style="font-family:var(--font-heading);font-size:22px;font-weight:700;margin-bottom:28px;padding-bottom:12px;border-bottom:2px solid var(--color-border);">
+        👕 Apparel
+      </h2>
+      <div class="product-grid">
+        <div class="product-card" data-category="apparel" data-price="49.99">
+          <div class="product-card-media">
+            <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?w=600&h=600&fit=crop&q=80" alt="Catagaroo Hoodie" loading="lazy" />
+            <span class="product-badge">Limited</span>
+            <div class="product-card-quick-add">
+              <button class="btn-green btn" onclick="addToCart('Catagaroo Hoodie', 49.99)">Quick Add — $49.99</button>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <p class="product-card-vendor">Nestify Apparel</p>
+            <h3 class="product-card-title"><a href="product.html?id=7">Catagaroo Hoodie with Kangaroo Pocket</a></h3>
+            <div class="product-price"><span class="price">$49.99</span></div>
+            <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(56)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="site-logo">Nest<span>ify</span></a>
+        <p>Premium home & kitchen essentials for the modern household.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+          <a href="#" aria-label="Pinterest">📌</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="collections.html">All Products</a></li>
+          <li><a href="collections.html#kitchen">Kitchen Tools</a></li>
+          <li><a href="collections.html#health">Health & Wellness</a></li>
+          <li><a href="collections.html#apparel">Apparel</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Nestify. All rights reserved.</p>
+      <div class="footer-payments">
+        <span class="payment-badge">VISA</span>
+        <span class="payment-badge">Mastercard</span>
+        <span class="payment-badge">PayPal</span>
+        <span class="payment-badge">Apple Pay</span>
+        <span class="payment-badge">Shop Pay</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">
+  <span class="toast-icon">✓</span>
+  <span id="toast-msg">Added to cart!</span>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
